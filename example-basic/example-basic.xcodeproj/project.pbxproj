@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AECC5F6519E1F90400059B4A /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AECC5F6119E1F90400059B4A /* particle.cpp */; };
-		AECC5F6619E1F90400059B4A /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AECC5F6319E1F90400059B4A /* ParticleSystem.cpp */; };
+		AECC5F6519E1F90400059B4A /* ofxParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AECC5F6119E1F90400059B4A /* ofxParticle.cpp */; };
+		AECC5F6619E1F90400059B4A /* ofxParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AECC5F6319E1F90400059B4A /* ofxParticleSystem.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -62,10 +62,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AECC5F6119E1F90400059B4A /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = particle.cpp; path = ../src/particle.cpp; sourceTree = "<group>"; };
-		AECC5F6219E1F90400059B4A /* particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = particle.h; path = ../src/particle.h; sourceTree = "<group>"; };
-		AECC5F6319E1F90400059B4A /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleSystem.cpp; path = ../src/ParticleSystem.cpp; sourceTree = "<group>"; };
-		AECC5F6419E1F90400059B4A /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleSystem.h; path = ../src/ParticleSystem.h; sourceTree = "<group>"; };
+		AECC5F6119E1F90400059B4A /* ofxParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxParticle.cpp; path = ../src/ofxParticle.cpp; sourceTree = "<group>"; };
+		AECC5F6219E1F90400059B4A /* ofxParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxParticle.h; path = ../src/ofxParticle.h; sourceTree = "<group>"; };
+		AECC5F6319E1F90400059B4A /* ofxParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxParticleSystem.cpp; path = ../src/ofxParticleSystem.cpp; sourceTree = "<group>"; };
+		AECC5F6419E1F90400059B4A /* ofxParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxParticleSystem.h; path = ../src/ofxParticleSystem.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -131,10 +131,10 @@
 		AECC5F6019E1F8F300059B4A /* src */ = {
 			isa = PBXGroup;
 			children = (
-				AECC5F6119E1F90400059B4A /* particle.cpp */,
-				AECC5F6219E1F90400059B4A /* particle.h */,
-				AECC5F6319E1F90400059B4A /* ParticleSystem.cpp */,
-				AECC5F6419E1F90400059B4A /* ParticleSystem.h */,
+				AECC5F6119E1F90400059B4A /* ofxParticle.cpp */,
+				AECC5F6219E1F90400059B4A /* ofxParticle.h */,
+				AECC5F6319E1F90400059B4A /* ofxParticleSystem.cpp */,
+				AECC5F6419E1F90400059B4A /* ofxParticleSystem.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -312,10 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECC5F6619E1F90400059B4A /* ParticleSystem.cpp in Sources */,
+				AECC5F6619E1F90400059B4A /* ofxParticleSystem.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
-				AECC5F6519E1F90400059B4A /* particle.cpp in Sources */,
+				AECC5F6519E1F90400059B4A /* ofxParticle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

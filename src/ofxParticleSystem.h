@@ -1,19 +1,19 @@
 #pragma once
 
 #include "ofMain.h"
-#include "particle.h"
+#include "ofxParticle.h"
 
-class ParticleSystem {
+class ofxParticleSystem {
 public:
-    ParticleSystem();
+    ofxParticleSystem();
 
-    ParticleSystem(int numParts, int width, int height, edgeMode edge, colorMode color);
+    ofxParticleSystem(int numParts, int width, int height, edgeMode edge, colorMode color);
     void setup();
     void reset();
     void display();
     void update();
     void steer(ofPoint target, int attract);
-    vector<particle> & getParticles();
+    vector<ofxParticle> & getParticles();
     
     
     edgeMode currentEdgeMode;
@@ -21,5 +21,5 @@ public:
     int numParticles;
     
     float width, height;
-    vector<particle> particles;
+    vector<ofxParticle> particles;
 };

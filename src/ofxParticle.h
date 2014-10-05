@@ -16,10 +16,10 @@ enum colorMode{
     ACCELERATION
 };
 
-class particle {
+class ofxParticle {
     
 public:
-    particle(float w, float h);
+    ofxParticle(float w, float h);
     void update();
     void display();
     void steer(ofPoint point, int attract);

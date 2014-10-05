@@ -1,8 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "particle.h"
-#include "ParticleSystem.h"
+#include "ofxParticleSystem.h"
 class testApp : public ofBaseApp{
 	public:
 		void setup();
@@ -19,7 +18,6 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    ParticleSystem ps;
+    ofxParticleSystem ps;
     int attract = 1;
-    //particle p;
 };

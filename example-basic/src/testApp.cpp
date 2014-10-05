@@ -3,19 +3,14 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofEnableSmoothing();
-    ps = ParticleSystem(1000, ofGetWidth(), ofGetHeight(), CLAMP, ACCELERATION);
+    ps = ofxParticleSystem(1000, ofGetWidth(), ofGetHeight(), CLAMP, ACCELERATION);
     ps.setup();
     ofSetBackgroundColor(255, 255, 255, 255);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    //ps.steer(ofPoint(mouseX, mouseY), attract);
-    vector<particle> &parts = ps.getParticles();
-    for(int i = 0; i<parts.size(); i++) {
-        parts[i].steer(ofPoint(mouseX, mouseY), attract);
-    }
-    
+    ps.steer(ofPoint(mouseX, mouseY), attract);
     ps.update();
 }
 

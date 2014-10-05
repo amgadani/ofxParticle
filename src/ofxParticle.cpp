@@ -1,11 +1,11 @@
-#include "particle.h"
+#include "ofxParticle.h"
 
-particle::particle(float w, float h) {
+ofxParticle::ofxParticle(float w, float h) {
     width = w;
     height = h;
     
 }
-void particle::setPoint(){
+void ofxParticle::setPoint(){
     loc = ofPoint(ofRandom(width), ofRandom(height));
     vel = ofPoint(ofRandom(-1,1), ofRandom(-1,1));
     acc = ofPoint(0,0);
@@ -14,7 +14,7 @@ void particle::setPoint(){
     maxspeed = 2.4;
     maxforce = 0.03;
 }
-void particle::display() {
+void ofxParticle::display() {
     
     ofPushStyle();
     if(currentColorMode == ACCELERATION) {
@@ -24,13 +24,13 @@ void particle::display() {
     ofCircle(loc, 2);
     ofPopStyle();
 }
-void particle::update() {
+void ofxParticle::update() {
     vel = vel+acc;
     loc = loc+vel;
     loc = clamp(loc);
     
 }
-ofPoint particle::clamp(ofPoint pos) {
+ofPoint ofxParticle::clamp(ofPoint pos) {
     if (currentEdgeMode == CLAMP) {
         if( pos.x > width ){
             pos.x = width;
@@ -63,7 +63,7 @@ ofPoint particle::clamp(ofPoint pos) {
     }
     return pos;
 }
-void particle::steer(ofPoint target, int attract) {
+void ofxParticle::steer(ofPoint target, int attract) {
     
     ofPoint steer;
     ofPoint desired = target - loc;
@@ -74,10 +74,10 @@ void particle::steer(ofPoint target, int attract) {
     steer.limit(maxforce);
     acc = steer;
 }
-void particle::setColorMode(colorMode color){
+void ofxParticle::setColorMode(colorMode color){
     currentColorMode = color;
 }
-void particle::setEdgeMode(edgeMode mode){
+void ofxParticle::setEdgeMode(edgeMode mode){
     currentEdgeMode = mode;
 }
 
