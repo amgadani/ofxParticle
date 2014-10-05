@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofEnableSmoothing();
-    ps = ofxParticleSystem(1000, ofGetWidth(), ofGetHeight(), CLAMP, ACCELERATION);
+    ps = ofxParticleSystem(1000, ofGetWidth(), ofGetHeight(), CLAMP, FORCE, CIRCLE_WEIGHT);
     ps.setup();
     ofSetBackgroundColor(255, 255, 255, 255);
     target = ofxParticle(ofGetWidth(), ofGetHeight());

@@ -7,7 +7,7 @@ class ofxParticleSystem {
 public:
     ofxParticleSystem();
 
-    ofxParticleSystem(int numParts, int width, int height, edgeMode edge, colorMode color);
+    ofxParticleSystem(int numParts, int width, int height, edgeMode edge, colorMode color, displayMode mode);
     void setup();
     void reset();
     void display();
@@ -18,6 +18,7 @@ public:
     
     edgeMode currentEdgeMode;
     colorMode currentColorMode;
+    displayMode currentDisplayMode;
     int numParticles;
     
     float width, height;

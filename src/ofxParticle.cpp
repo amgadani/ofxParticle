@@ -21,11 +21,30 @@ void ofxParticle::setPoint(){
 void ofxParticle::display() {
     
     ofPushStyle();
-    if(currentColorMode == ACCELERATION) {
-        ofVec3f color = acc.normalized();
-        ofSetColor(color.x*255, color.y*255, 255);
+    switch (currentColorMode) {
+        case ACCELERATION: {
+            ofVec3f color = acc.normalized();
+            ofSetColor(color.x*255, color.y*255, 255);
+            break; }
+        case FORCE: {
+            ofSetColor(force*100, 0, 0);
+            break;
+        }
+        default:{
+            break;         
+        }
+   
     }
-    ofCircle(loc, 2);
+    switch (currentDisplayMode) {
+        case CIRCLE:
+            ofCircle(loc, 2);
+            break;
+        case CIRCLE_WEIGHT:
+            ofCircle(loc, weight);
+            break;
+        default:
+            break;
+    }
     ofPopStyle();
 }
 void ofxParticle::update() {
@@ -74,7 +93,7 @@ void ofxParticle::steer(ofxParticle target, int attract) {
     float d = direction.length();
     if (d  < 5) d = 5;
     direction.normalize();
-    float force = target.weight * weight/(d*d);
+    force = target.weight * weight/(d*d);
     direction = attract*direction*force;
     steer = direction-vel;
     steer.limit(maxforce);
@@ -86,5 +105,7 @@ void ofxParticle::setColorMode(colorMode color){
 void ofxParticle::setEdgeMode(edgeMode mode){
     currentEdgeMode = mode;
 }
-
+void ofxParticle::setDisplayMode(displayMode mode){
+    currentDisplayMode = mode;
+}
 

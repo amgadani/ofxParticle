@@ -6,14 +6,16 @@ ofxParticleSystem::ofxParticleSystem(){
     numParticles = 100;
     currentEdgeMode = CLAMP;
     currentColorMode = ACCELERATION;
+    currentDisplayMode = CIRCLE;
 }
 
-ofxParticleSystem::ofxParticleSystem(int numParts, int width, int height, edgeMode edge, colorMode color){
+ofxParticleSystem::ofxParticleSystem(int numParts, int width, int height, edgeMode edge, colorMode color, displayMode mode){
     this->width = width;
     this->height = height;
     numParticles = numParts;
     currentEdgeMode = edge;
     currentColorMode = color;
+    currentDisplayMode = mode;
 }
 void ofxParticleSystem::setup() {
     particles.assign(numParticles, ofxParticle(width, height));
@@ -21,6 +23,8 @@ void ofxParticleSystem::setup() {
         particles[i].setPoint();
         particles[i].setColorMode(currentColorMode);
         particles[i].setEdgeMode(currentEdgeMode);
+        particles[i].setDisplayMode(currentDisplayMode);
+
     }
 }
 void ofxParticleSystem::reset(){

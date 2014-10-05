@@ -7,13 +7,15 @@ enum edgeMode{
 
 enum displayMode{
     RECT,
-    CIRCLE
+    CIRCLE,
+    CIRCLE_WEIGHT
 };
 
 enum colorMode{
     INPUT,
     SPEED,
-    ACCELERATION
+    ACCELERATION,
+    FORCE
 };
 
 class ofxParticle {
@@ -28,6 +30,7 @@ public:
     void setPoint();
     void setColorMode(colorMode color);
     void setEdgeMode(edgeMode mode);
+    void setDisplayMode(displayMode mode);
     ofPoint clamp(ofPoint point);
     
     ofPoint loc, vel, acc;
@@ -35,8 +38,10 @@ public:
     float maxspeed;
     float maxforce;
     float weight;
+    float force;
     float width, height;
     
     colorMode currentColorMode = INPUT;
     edgeMode currentEdgeMode = CLAMP;
+    displayMode currentDisplayMode = CIRCLE;
 };
