@@ -20,9 +20,11 @@ class ofxParticle {
     
 public:
     ofxParticle(float w, float h);
+    ofxParticle();
+
     void update();
     void display();
-    void steer(ofPoint point, int attract);
+    void steer(ofxParticle point, int attract);
     void setPoint();
     void setColorMode(colorMode color);
     void setEdgeMode(edgeMode mode);

@@ -19,5 +19,6 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     ofxParticleSystem ps;
+    ofxParticle target;
     int attract = 1;
 };

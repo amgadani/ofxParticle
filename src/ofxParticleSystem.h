@@ -12,7 +12,7 @@ public:
     void reset();
     void display();
     void update();
-    void steer(ofPoint target, int attract);
+    void steer(ofxParticle target, int attract);
     vector<ofxParticle> & getParticles();
     
     

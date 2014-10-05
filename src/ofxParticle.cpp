@@ -1,5 +1,9 @@
 #include "ofxParticle.h"
-
+ofxParticle::ofxParticle() {
+    width = ofGetWidth();
+    height = ofGetHeight();
+    
+}
 ofxParticle::ofxParticle(float w, float h) {
     width = w;
     height = h;
@@ -10,7 +14,7 @@ void ofxParticle::setPoint(){
     vel = ofPoint(ofRandom(-1,1), ofRandom(-1,1));
     acc = ofPoint(0,0);
     speed = 1;
-    weight = ofRandom(50, 150);
+    weight = ofRandom(5, 10);
     maxspeed = 2.4;
     maxforce = 0.03;
 }
@@ -63,14 +67,16 @@ ofPoint ofxParticle::clamp(ofPoint pos) {
     }
     return pos;
 }
-void ofxParticle::steer(ofPoint target, int attract) {
+void ofxParticle::steer(ofxParticle target, int attract) {
     
     ofPoint steer;
-    ofPoint desired = target - loc;
-    float d = desired.length();
-    desired.normalize();
-    desired = attract*desired*maxspeed;
-    steer = desired-vel;
+    ofPoint direction = target.loc - loc;
+    float d = direction.length();
+    if (d  < 5) d = 5;
+    direction.normalize();
+    float force = target.weight * weight/(d*d);
+    direction = attract*direction*force;
+    steer = direction-vel;
     steer.limit(maxforce);
     acc = steer;
 }

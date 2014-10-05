@@ -38,7 +38,7 @@ void ofxParticleSystem::update() {
         particles[i].update();
     }
 }
-void ofxParticleSystem::steer(ofPoint target, int attract){
+void ofxParticleSystem::steer(ofxParticle target, int attract){
     for(int i = 0; i < particles.size(); i++) {
         particles[i].steer(target, attract);
     }

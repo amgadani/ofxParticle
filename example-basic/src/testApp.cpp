@@ -6,11 +6,15 @@ void testApp::setup(){
     ps = ofxParticleSystem(1000, ofGetWidth(), ofGetHeight(), CLAMP, ACCELERATION);
     ps.setup();
     ofSetBackgroundColor(255, 255, 255, 255);
+    target = ofxParticle(ofGetWidth(), ofGetHeight());
+    target.setPoint();
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    ps.steer(ofPoint(mouseX, mouseY), attract);
+    target.weight = ofGetFrameNum();
+    target.loc =ofPoint(mouseX, mouseY);
+    ps.steer(target, attract);
     ps.update();
 }
 
