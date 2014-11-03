@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DAE9EEA8-A487-4F07-BCEA-EC8CB9E32595</string>
+	<key>IDESourceControlProjectName</key>
+	<string>example-basic</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3E2833B1-EE3B-467B-BA0B-967551F84CDF</key>
+		<string>https://github.com/amgadani/ofxParticle.git</string>
+		<key>74FA9D6C-CCE5-46A3-B87E-B5FB35D10ADE</key>
+		<string>https://github.com/openframeworks/openFrameworks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>addons/ofxParticle/example-basic/example-basic.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3E2833B1-EE3B-467B-BA0B-967551F84CDF</key>
+		<string>../../..</string>
+		<key>74FA9D6C-CCE5-46A3-B87E-B5FB35D10ADE</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/amgadani/ofxParticle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>74FA9D6C-CCE5-46A3-B87E-B5FB35D10ADE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3E2833B1-EE3B-467B-BA0B-967551F84CDF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxParticle</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>74FA9D6C-CCE5-46A3-B87E-B5FB35D10ADE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>openFrameworks</string>
+		</dict>
+	</array>
+</dict>
+</plist>

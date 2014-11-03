@@ -28,6 +28,8 @@ public:
     void display();
     void steer(ofxParticle point, int attract);
     void setPoint();
+    void setPoint(float x, float y);
+
     void setColorMode(colorMode color);
     void setEdgeMode(edgeMode mode);
     void setDisplayMode(displayMode mode);

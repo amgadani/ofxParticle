@@ -3,35 +3,41 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofEnableSmoothing();
-    ps = ofxParticleSystem(1000, ofGetWidth(), ofGetHeight(), CLAMP, FORCE, CIRCLE_WEIGHT);
+    ps = ofxParticleSystem(1000, ofGetWidth(), ofGetHeight(), CLAMP, ACCELERATION, CIRCLE);
     ps.setup();
-    ofSetBackgroundColor(255, 255, 255, 255);
+    //ofSetBackgroundColor(255, 255, 255, 255);
+    ofSetBackgroundAuto(false);
     target = ofxParticle(ofGetWidth(), ofGetHeight());
     target.setPoint();
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    target.weight = ofGetFrameNum();
+    target.weight = 5000;
     target.loc =ofPoint(mouseX, mouseY);
     ps.steer(target, attract);
     ps.update();
+
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    ofBackground(255);
-    ps.display();
+    ofBackground(255 ,10);
+    ps.display(true);
+
 }
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
+    
     ps.reset();
+
+
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-    
+
 }
 
 //--------------------------------------------------------------

@@ -9,6 +9,18 @@ ofxParticle::ofxParticle(float w, float h) {
     height = h;
     
 }
+void ofxParticle::setPoint(float x,float y){
+    loc = ofPoint(x, y);
+    vel = ofPoint(ofRandom(-1,1), ofRandom(-1,1));
+    acc = ofPoint(0,0);
+    speed = 1;
+    weight = ofRandom(5, 10);
+    maxspeed = 2.4;
+    maxforce = 0.03;
+    currentColorMode = ACCELERATION;
+    currentDisplayMode = CIRCLE;
+    currentEdgeMode = CLAMP;
+}
 void ofxParticle::setPoint(){
     loc = ofPoint(ofRandom(width), ofRandom(height));
     vel = ofPoint(ofRandom(-1,1), ofRandom(-1,1));
@@ -17,13 +29,17 @@ void ofxParticle::setPoint(){
     weight = ofRandom(5, 10);
     maxspeed = 2.4;
     maxforce = 0.03;
+    currentColorMode = ACCELERATION;
+    currentDisplayMode = CIRCLE;
+    currentEdgeMode = CLAMP;
+    
 }
 void ofxParticle::display() {
     
     ofPushStyle();
     switch (currentColorMode) {
         case ACCELERATION: {
-            ofVec3f color = acc.normalized();
+            ofVec3f color = vel.normalized();
             ofSetColor(color.x*255, color.y*255, 255);
             break; }
         case FORCE: {

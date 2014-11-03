@@ -7,6 +7,7 @@ ofxParticleSystem::ofxParticleSystem(){
     currentEdgeMode = CLAMP;
     currentColorMode = ACCELERATION;
     currentDisplayMode = CIRCLE;
+    tree = new ofxTree(0, width, 0, height);
 }
 
 ofxParticleSystem::ofxParticleSystem(int numParts, int width, int height, edgeMode edge, colorMode color, displayMode mode){
@@ -16,6 +17,7 @@ ofxParticleSystem::ofxParticleSystem(int numParts, int width, int height, edgeMo
     currentEdgeMode = edge;
     currentColorMode = color;
     currentDisplayMode = mode;
+    tree = new ofxTree(0, width, 0, height);
 }
 void ofxParticleSystem::setup() {
     particles.assign(numParticles, ofxParticle(width, height));
@@ -26,28 +28,30 @@ void ofxParticleSystem::setup() {
         particles[i].setDisplayMode(currentDisplayMode);
 
     }
+    tree->addAll(particles);
+
 }
 void ofxParticleSystem::reset(){
-    for(int i = 0; i < particles.size(); i++) {
-        particles[i].setPoint();
-    }
+    delete tree;
+    tree = new ofxTree(0, width, 0, height);
+    tree->addAll(particles);
 }
-void ofxParticleSystem::display(){
-    for(int i = 0; i < particles.size(); i++) {
-        particles[i].display();
-    }
+void ofxParticleSystem::display(Boolean showTree){
+    tree->draw(showTree);
+    
 }
 void ofxParticleSystem::update() {
-    for(int i = 0; i < particles.size(); i++) {
-        particles[i].update();
-    }
+    tree->update();
+    particles = tree->getParticles();
+    delete tree;
+    tree = new ofxTree(0, width, 0, height);
+    tree->addAll(particles);
+  
 }
 void ofxParticleSystem::steer(ofxParticle target, int attract){
-    for(int i = 0; i < particles.size(); i++) {
-        particles[i].steer(target, attract);
-    }
+    tree->steer(target, attract);
 }
 
-vector<ofxParticle> & ofxParticleSystem::getParticles() {
-    return particles;
+vector<ofxParticle> ofxParticleSystem::getParticles() {
+    return tree->getParticles();
 }
